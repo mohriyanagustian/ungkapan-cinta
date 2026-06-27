@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday — Anggiani Kholifah ✨</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@200;300;400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     PARTICLES BACKGROUND
+══════════════════════════════════ -->
+<canvas id="particles"></canvas>
+
+<!-- ══════════════════════════════════
+     POPUP / INTRO
+══════════════════════════════════ -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <div class="popup-stars">✦ ✦ ✦</div>
+    <div class="popup-rose">🌹</div>
+    <h1>Untuk Kekasih Tercinta</h1>
+    <p class="popup-sub">Sebuah persembahan spesial telah disiapkan untukmu</p>
+    <p class="popup-name">Anggiani Kholifah</p>
+    <button onclick="masuk()" class="btn-enter">
+      <span>✨ Buka Kejutan ✨</span>
+    </button>
+    <div class="popup-footer">10 November 2026 · 25 Tahun</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     NAVBAR
+══════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-brand">A.K</div>
+  <ul class="nav-links">
+    <li><a href="#hero" onclick="scrollTo('hero')">Home</a></li>
+    <li><a href="#pesan" onclick="scrollTo('pesan')">Pesan</a></li>
+    <li><a href="#galeri" onclick="scrollTo('galeri')">Galeri</a></li>
+    <li><a href="#puisi" onclick="scrollTo('puisi')">Puisi</a></li>
+    <li><a href="#doa" onclick="scrollTo('doa')">Doa</a></li>
+    <li><a href="#surat" onclick="scrollTo('surat')">Surat</a></li>
+  </ul>
+  <div class="nav-burger" onclick="toggleNav()">☰</div>
+</nav>
+<div class="nav-mobile-menu" id="navMobile">
+  <a href="#hero" onclick="closeNav()">Home</a>
+  <a href="#pesan" onclick="closeNav()">Pesan</a>
+  <a href="#galeri" onclick="closeNav()">Galeri</a>
+  <a href="#puisi" onclick="closeNav()">Puisi</a>
+  <a href="#doa" onclick="closeNav()">Doa</a>
+  <a href="#surat" onclick="closeNav()">Surat</a>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 1: HERO
+══════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-inner">
+    <div class="photo-wrap">
+      <div class="photo-ring"></div>
+      <img src="anggiani.jpg" class="foto" alt="Anggiani Kholifah">
+      <div class="photo-sparkle s1">✦</div>
+      <div class="photo-sparkle s2">✦</div>
+      <div class="photo-sparkle s3">✦</div>
+    </div>
+    <div class="hero-text">
+      <div class="hero-pretitle">✦ Selamat Ulang Tahun ✦</div>
+      <h1 class="hero-name">Anggiani Kholifah</h1>
+      <div class="hero-age">The 25<sup>th</sup> Year</div>
+      <div class="gold-line"></div>
+      <p class="hero-quote">"Kamu adalah keajaiban terbaik yang pernah hadir dalam hidupku."</p>
+      <div class="hero-date">10 November 2026</div>
+      <button class="btn-gold" onclick="document.getElementById('pesan').scrollIntoView({behavior:'smooth'})">
+        Lihat Pesan Cinta ↓
+      </button>
+    </div>
+  </div>
+
+  <!-- Countdown -->
+  <div class="countdown-wrap">
+    <div class="countdown-label">⏳ Countdown Hari Spesialmu</div>
+    <div class="countdown-boxes" id="countdown">
+      <div class="cd-box"><span id="cd-days">--</span><small>Hari</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><span id="cd-hours">--</span><small>Jam</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><span id="cd-mins">--</span><small>Menit</small></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><span id="cd-secs">--</span><small>Detik</small></div>
+    </div>
+    <div id="birthday-msg" class="birthday-live" style="display:none">
+      🎉 Selamat Ulang Tahun Sayang! Hari ini adalah harimu! 🎉
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 2: PESAN INTERAKTIF
+══════════════════════════════════ -->
+<section class="section-pesan" id="pesan">
+  <div class="section-header">
+    <div class="section-tag">Words from the Heart</div>
+    <h2 class="section-title">Pesan Dariku</h2>
+    <div class="gold-line center"></div>
+  </div>
+
+  <div class="pesan-menu">
+    <div class="pesan-btn active" onclick="showMsg(0)" data-i="0">💌<span>Ucapan</span></div>
+    <div class="pesan-btn" onclick="showMsg(1)" data-i="1">🌹<span>Terima Kasih</span></div>
+    <div class="pesan-btn" onclick="showMsg(2)" data-i="2">❤️<span>Senyummu</span></div>
+    <div class="pesan-btn" onclick="showMsg(3)" data-i="3">🎂<span>Hari Ini</span></div>
+    <div class="pesan-btn" onclick="showMsg(4)" data-i="4">👑<span>Cintaku</span></div>
+    <div class="pesan-btn" onclick="showMsg(5)" data-i="5">🌙<span>Mimpi</span></div>
+    <div class="pesan-btn" onclick="showMsg(6)" data-i="6">⭐<span>Bintangku</span></div>
+  </div>
+
+  <div class="pesan-card" id="pesan-card">
+    <div class="pesan-icon" id="pesan-icon">💌</div>
+    <div class="pesan-text" id="pesan-text">Klik ikon di atas untuk membaca pesanku untukmu, sayang.</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 3: GALERI MOMEN
+══════════════════════════════════ -->
+<section class="section-galeri" id="galeri">
+  <div class="section-header">
+    <div class="section-tag">Gallery of Love</div>
+    <h2 class="section-title">Kenangan Terindah</h2>
+    <div class="gold-line center"></div>
+  </div>
+
+  <div class="galeri-grid">
+    <div class="galeri-item g-main" onclick="openLightbox(0)">
+      <img src="anggiani.jpg" alt="Anggiani">
+      <div class="galeri-overlay"><span>✨ Lihat</span></div>
+      <div class="galeri-label">Kamu yang Selalu Indah</div>
+    </div>
+    <div class="galeri-item" onclick="openLightbox(1)">
+      <img src="foto1.jpg" alt="Kenangan Bersama">
+      <div class="galeri-overlay"><span>💌 Kenangan</span></div>
+    </div>
+    <div class="galeri-item" onclick="openLightbox(2)">
+      <img src="foto2.jpg" alt="Kenangan Bersama">
+      <div class="galeri-overlay"><span>💌 Kenangan</span></div>
+    </div>
+    <div class="galeri-item" onclick="openLightbox(3)">
+      <img src="foto3.jpg" alt="Kenangan Bersama">
+      <div class="galeri-overlay"><span>💌 Kenangan</span></div>
+    </div>
+    <div class="galeri-item" onclick="openLightbox(4)">
+      <img src="foto4.jpg" alt="Kenangan Bersama">
+      <div class="galeri-overlay"><span>💌 Kenangan</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lightbox-inner">
+    <div class="lb-close" onclick="closeLightbox()">✕</div>
+    <img src="anggiani.jpg" id="lb-img" alt="" style="display:none">
+    <div class="lb-placeholder" id="lb-placeholder"></div>
+    <div class="lb-caption" id="lb-caption"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     SECTION 4: PUISI
+══════════════════════════════════ -->
+<section class="section-puisi" id="puisi">
+  <div class="section-header">
+    <div class="section-tag">A Poem For You</div>
+    <h2 class="section-title">Surat dari Hati</h2>
+    <div class="gold-line center"></div>
+  </div>
+
+  <div class="puisi-container">
+    <div class="puisi-nav">
+      <button class="puisi-tab active" onclick="showPuisi(0)">Puisi I</button>
+      <button class="puisi-tab" onclick="showPuisi(1)">Puisi II</button>
+      <button class="puisi-tab" onclick="showPuisi(2)">Puisi III</button>
+    </div>
+
+    <div class="puisi-content" id="puisi-0">
+      <div class="puisi-title">Cahayaku</div>
+      <div class="puisi-body">
+        <p>Dua puluh lima tahun sudah kau hiasi bumi ini,<br>
+        Setiap langkahmu mengukir keanggunan yang tak terganti,<br>
+        Matamu adalah bintang di langit tergelap sekalipun,<br>
+        Senyummu adalah fajar yang selalu dinantikan.</p>
+
+        <p>Kau hadir seperti puisi yang tak selesai kutulis,<br>
+        Setiap baitnya mengalir indah tanpa terasa,<br>
+        Dalam setiap hembus nafasmu ada doa-doa kecil,<br>
+        Yang menghangati setiap sudut hidupku.</p>
+
+        <p><em>Selamat ulang tahun, belahan jiwaku.<br>
+        Semoga tahun ini membawamu ke tempat<br>
+        yang selalu kau impikan.</em></p>
+      </div>
+    </div>
+
+    <div class="puisi-content hidden" id="puisi-1">
+      <div class="puisi-title">Tentangmu</div>
+      <div class="puisi-body">
+        <p>Jika aku bisa memilih satu hal di dunia ini,<br>
+        Aku akan memilih untuk selalu berada di sisimu,<br>
+        Menyaksikan matamu bercahaya di pagi hari,<br>
+        Dan mendengar tawamu mengisi malam yang sunyi.</p>
+
+        <p>Kamu bukan sekadar seseorang yang aku cintai,<br>
+        Kamu adalah rumah yang selalu kurindukan,<br>
+        Di manapun aku berada, pikiranku selalu kembali,<br>
+        Pada senyummu yang menjadi tempat paling nyaman.</p>
+
+        <p><em>Terima kasih telah menjadi rumahku, sayang.<br>
+        Selamat ulang tahun yang ke-25.</em></p>
+      </div>
+    </div>
+
+    <div class="puisi-content hidden" id="puisi-2">
+      <div class="puisi-title">Dua Puluh Lima</div>
+      <div class="puisi-body">
+        <p>Dua puluh lima adalah angka yang indah,<br>
+        Seperti bulan purnama yang selalu sempurna,<br>
+        Di usiamu yang penuh cahaya ini, sayang,<br>
+        Semesta pun ikut merayakan kehadiranmu.</p>
+
+        <p>Setiap lilin yang kau tiup malam ini,<br>
+        Adalah harapan yang aku kirimkan untukmu,<br>
+        Semoga setiap keinginanmu terwujud nyata,<br>
+        Dan kebahagiaanmu tak pernah pudar selamanya.</p>
+
+        <p><em>Happy Birthday, my love.<br>
+        Kamu adalah yang terbaik yang pernah ada.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 5: DOA & HARAPAN
+══════════════════════════════════ -->
+<section class="section-doa" id="doa">
+  <div class="section-header">
+    <div class="section-tag">Wishes & Prayers</div>
+    <h2 class="section-title">Doa & Harapanku</h2>
+    <div class="gold-line center"></div>
+  </div>
+
+  <div class="doa-grid">
+    <div class="doa-card" data-aos>
+      <div class="doa-num">01</div>
+      <div class="doa-icon">🌿</div>
+      <h3>Kesehatan</h3>
+      <p>Semoga kesehatan selalu menyertaimu di setiap langkah perjalananmu, kini dan selamanya.</p>
+    </div>
+    <div class="doa-card" data-aos>
+      <div class="doa-num">02</div>
+      <div class="doa-icon">⭐</div>
+      <h3>Impian</h3>
+      <p>Semoga impian-impianmu satu per satu menjadi nyata dengan cara yang paling indah dan membahagiakan.</p>
+    </div>
+    <div class="doa-card" data-aos>
+      <div class="doa-num">03</div>
+      <div class="doa-icon">😊</div>
+      <h3>Senyuman</h3>
+      <p>Semoga senyummu tak pernah pudar, bahkan di hari-hari yang paling berat sekalipun.</p>
+    </div>
+    <div class="doa-card" data-aos>
+      <div class="doa-num">04</div>
+      <div class="doa-icon">❤️</div>
+      <h3>Cinta</h3>
+      <p>Semoga kau selalu dikelilingi oleh orang-orang yang benar-benar mencintaimu dengan tulus.</p>
+    </div>
+    <div class="doa-card" data-aos>
+      <div class="doa-num">05</div>
+      <div class="doa-icon">🚀</div>
+      <h3>Karir</h3>
+      <p>Semoga karir dan masa depanmu bersinar terang seperti bintang di langit terindah.</p>
+    </div>
+    <div class="doa-card" data-aos>
+      <div class="doa-num">06</div>
+      <div class="doa-icon">🌙</div>
+      <h3>Keberkahan</h3>
+      <p>Semoga keberkahan selalu mengalir dalam setiap aspek kehidupanmu tanpa pernah berhenti.</p>
+    </div>
+    <div class="doa-card" data-aos>
+      <div class="doa-num">07</div>
+      <div class="doa-icon">🌷</div>
+      <h3>Kebahagiaan</h3>
+      <p>Semoga kebahagiaan ini abadi dan berkembang semakin besar dan indah setiap harinya.</p>
+    </div>
+    <div class="doa-card" data-aos>
+      <div class="doa-num">08</div>
+      <div class="doa-icon">💑</div>
+      <h3>Kita</h3>
+      <p>Semoga cinta kita selalu hangat, tulus, dan semakin mendalam seiring berjalannya waktu.</p>
+    </div>
+    <div class="doa-card" data-aos>
+      <div class="doa-num">09</div>
+      <div class="doa-icon">🕊️</div>
+      <h3>Kedamaian</h3>
+      <p>Semoga hatimu selalu damai dan tenang, jauh dari kesedihan dan kegelisahan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 6: SURAT CINTA
+══════════════════════════════════ -->
+<section class="section-surat" id="surat">
+  <div class="section-header">
+    <div class="section-tag">Love Letter</div>
+    <h2 class="section-title">Sepucuk Surat</h2>
+    <div class="gold-line center"></div>
+  </div>
+
+  <div class="surat-envelope" id="envelope" onclick="openSurat()">
+    <div class="env-front">
+      <div class="env-seal">💌</div>
+      <div class="env-text">Klik untuk membuka</div>
+      <div class="env-to">Untuk: Anggiani Kholifah</div>
+    </div>
+  </div>
+
+  <div class="surat-letter" id="letter" style="display:none">
+    <div class="surat-paper">
+      <div class="surat-header">
+        <div class="surat-dari">Kepada yang paling kucintai,</div>
+        <div class="surat-rose">🌹 🌹 🌹</div>
+      </div>
+      <div class="surat-isi">
+        <p>Anggiani sayang,</p>
+        <p>Hari ini kamu genap berusia dua puluh lima tahun. Dan di momen spesial ini, izinkan aku untuk berkata bahwa kamu adalah salah satu hal terbaik yang pernah hadir dalam hidupku.</p>
+        <p>Bersama kamu, aku menemukan arti dari kata "pulang". Setiap hari bersamamu terasa seperti anugerah yang tak pernah aku minta, tapi selalu aku syukuri.</p>
+        <p>Di usiamu yang ke-25 ini, aku berharap kamu tahu betapa berharganya kamu — bukan hanya bagiku, tapi juga bagi dunia. Kamu membawa cahaya ke setiap ruangan yang kamu masuki, dan setiap orang yang mengenalmu pasti bersyukur pernah bertemu denganmu.</p>
+        <p>Aku mencintaimu bukan hanya karena siapa kamu hari ini, tapi juga siapa yang akan kamu jadi esok hari. Dan aku ingin selalu ada di sisimu, menemanimu di setiap babak cerita yang akan datang.</p>
+        <p>Selamat ulang tahun, belahan jiwaku. Semoga tahun ke-25 ini menjadi tahun yang paling indah dalam hidupmu.</p>
+        <div class="surat-ttd">
+          <p>Dengan seluruh cinta yang aku punya,</p>
+          <div class="surat-nama">— Kekasihmu 🌹</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 7: MUSIC PLAYER
+══════════════════════════════════ -->
+<section class="section-music" id="music">
+  <div class="section-header">
+    <div class="section-tag">Birthday Melody</div>
+    <h2 class="section-title">Lagu Untukmu 🎵</h2>
+    <div class="gold-line center"></div>
+  </div>
+
+  <div class="music-player">
+    <div class="music-cover">🎵</div>
+    <div class="music-info">
+      <div class="music-title">Happy Birthday to You</div>
+      <div class="music-artist">Special Edition · Anggiani Kholifah</div>
+    </div>
+    <div class="music-controls">
+      <button class="music-btn" id="playBtn" onclick="toggleMusic()">▶ Play Musik</button>
+    </div>
+    <div class="music-note">🎹 Musik otomatis dimainkan sebagai kejutan spesial</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     SECTION 8: WISH BOARD
+══════════════════════════════════ -->
+<section class="section-wishboard" id="wishboard">
+  <div class="section-header">
+    <div class="section-tag">Birthday Wishes</div>
+    <h2 class="section-title">Papan Harapan 🌟</h2>
+    <div class="gold-line center"></div>
+    <p class="section-sub">Tuliskan harapanmu untuk Anggiani di sini</p>
+  </div>
+
+  <div class="wishboard-input">
+    <input type="text" id="wish-name" placeholder="Namamu..." maxlength="30">
+    <textarea id="wish-text" placeholder="Tulis harapanmu untuk Anggiani..." maxlength="150" rows="3"></textarea>
+    <button class="btn-gold" onclick="addWish()">✨ Kirim Harapan</button>
+  </div>
+
+  <div class="wishes-wall" id="wishes-wall"></div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-ornament">✦ ✦ ✦</div>
+  <div class="footer-name">Anggiani Kholifah</div>
+  <div class="footer-sub">10 November 2026 · 25 Years of Grace & Beauty</div>
+  <div class="footer-quote">"Kamu adalah keajaiban terbaik yang pernah hadir dalam hidupku."</div>
+  <div class="footer-hearts">🌹 ❤️ 🌹</div>
+  <div class="footer-copy">Made with ❤️ · Lover Birthday Edition</div>
+</footer>
+
+<!-- Back to top -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
